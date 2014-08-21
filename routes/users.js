@@ -4,7 +4,7 @@
  *  Modules & Router
  *
  ******************************************/
-var users = {};
+
 
 var express = require('express');
 var router = express.Router();
@@ -15,14 +15,34 @@ var router = express.Router();
  *
  ******************************************/
 
-router.route('/{id}')
-
+router.route("/")
     .post(function (req, res) {
 
-        console.log("Mi id es " )
+        console.log("Mi id es " + req.params.id)
         res.send(404, "You must send a valid action")
-        return;
+    })
+    .get(function (req, res) {
+
+        console.log("Mi id es " + req.params.id)
+        res.send(404, "You must send a valid action")
     });
 
 
-module.exports = users;
+router.route('/:id')
+
+
+    .put(function (req, res) {
+
+        console.log("Mi id es " + req.params.id)
+        res.send(404, "You must send a valid action")
+    })
+    .delete(function (req, res) {
+
+        console.log("Mi id es " + req.params.id)
+        res.send(404, "You must send a valid action")
+    });
+
+
+
+
+module.exports = router;
