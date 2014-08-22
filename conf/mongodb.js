@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var mongodbOptions = {};
 var mongodbURL = 'mongodb://localhost/test';
 
 mongoose.connect(mongodbURL, mongodbOptions, function (err, res) {
