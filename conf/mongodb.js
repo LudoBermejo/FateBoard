@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var mongodbOptions = {};
-var mongodbURL = 'mongodb://localhost/test';
+var mongodbURL = 'mongodb://fateboard:thisistheriver@ds053428.mongolab.com:53428/fateboard';
 
 mongoose.connect(mongodbURL, mongodbOptions, function (err, res) {
     if (err) {

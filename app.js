@@ -40,9 +40,14 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }))
  ******************************************/
 
 var users = require('./routes/users');
+var install = require('./routes/install');
+var cors = require('cors');
 
+// use cors
+app.use(cors())
 
 //app.use(tokens.check());
+app.use('/api/install', install);
 app.use('/api/users', users);
 
 /******************************************
