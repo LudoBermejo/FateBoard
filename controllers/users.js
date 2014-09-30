@@ -7,7 +7,6 @@ var users = {};
 
 users.count = function () {
     return new Promise(function (resolve, reject) {
-        console.log("LLEGO");
         UserModel.find({}).count({}, function (err, n) {
             if (err)
                 reject({
@@ -22,6 +21,8 @@ users.count = function () {
 }
 
 users.add = function (req) {
+
+
     return new Promise(function (resolve, reject) {
 
         var resValidation = validation.validate("users", "add", req.body)
@@ -42,6 +43,7 @@ users.add = function (req) {
         // save the bear and check for errors
         user.save(function (err) {
 
+            console.log(err);
             if (err)
                 reject({
                     error: {
@@ -54,6 +56,22 @@ users.add = function (req) {
             resolve(true)
 
         });
+    });
+}
+
+users.login = function (req) {
+
+
+    return new Promise(function (resolve, reject) {
+
+        var resValidation = validation.validate("users", "login", req.body)
+
+        if (resValidation !== true) {
+            reject(resValidation);
+            return;
+        }
+        resolve(true)
+
     });
 }
 

@@ -26,7 +26,6 @@ router.route("/")
         })
         .catch(function(result)
         {
-            console.log(result);
             res.send(result.error.code, result.error.message)
         })
 
@@ -34,7 +33,6 @@ router.route("/")
     })
     .get(function (req, res) {
 
-        console.log("Mi id es " + req.params.id)
         res.send(404, "You must send a valid action")
     });
 
@@ -44,16 +42,25 @@ router.route('/:id')
 
     .put(function (req, res) {
 
-        console.log("Mi id es " + req.params.id)
         res.send(404, "You must send a valid action")
     })
     .delete(function (req, res) {
 
-        console.log("Mi id es " + req.params.id)
         res.send(404, "You must send a valid action")
     });
 
 
+router.route("/login")
+    .post(function (req, res) {
+        users.login(req).then(function(message)
+        {
+            res.send(200, message)
+        })
+        .catch(function(result)
+        {
+            res.send(result.error.code, result.error.message)
+        })
+    });
 
 
 module.exports = router;

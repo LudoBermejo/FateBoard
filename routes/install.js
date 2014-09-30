@@ -22,6 +22,7 @@ router.route("/empty")
     .get(function (req, res) {
 
         usersController.count().then(function(c) {
+            console.log(c);
             res.json({ isEmpty: c == 0 });
         }).catch(function(e)
         {

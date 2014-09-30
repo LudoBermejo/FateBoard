@@ -88,6 +88,15 @@
             "password": {
                 "rulesOfValidation": ["Can'tBeEmpty"]
             }
+        },
+
+        "users-login": {
+            "email": {
+                "rulesOfValidation": ["MustBeEmail"]
+            },
+            "password": {
+                "rulesOfValidation": ["Can'tBeEmpty"]
+            }
         }
 
     }
