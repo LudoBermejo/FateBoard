@@ -1,6 +1,6 @@
 //Notes controller
 
-  angular.module('boilerApp.board.notes.controllers',[ 'boilerApp.globals.services', 'boilerApp.board.notes.directives' ])
+  angular.module('boilerApp.board.notes.controllers',[ 'boilerApp.globals.services', 'boilerApp.board.notes.directives',"xeditable" ])
   .controller('NotesController', [
     '$scope', 'notesService',
     function($scope, notesService) {

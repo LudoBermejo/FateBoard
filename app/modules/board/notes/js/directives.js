@@ -1,4 +1,4 @@
-angular.module('boilerApp.board.notes.directives',[])
+angular.module('boilerApp.board.notes.directives')
     .directive('noteBoard', function () {
         return {
             restrict: 'AEC', 

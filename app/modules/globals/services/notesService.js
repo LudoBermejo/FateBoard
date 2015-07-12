@@ -6,6 +6,7 @@ angular.module('boilerApp.globals.services', [])
 			   var colors = ["color1", "color2", "color3", "color4"];
 			   return {
 				   id: uuid++,
+				   title: 'Title',
 				   color: colors[Math.floor(Math.random() * (colors.length))],
 				   sizeX: 2, 
 				   sizeY: 2, 
