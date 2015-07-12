@@ -25,7 +25,11 @@ body {
   margin: 0;
 }
 
-
+.hide {
+  display:none;
+}
+.formEditTitle {
+}
 .gridster-item-resizable-handler {
   z-index: 100;
 }
@@ -35,6 +39,11 @@ body {
   height:100% !important;
   min-height: inherit;
 }
+
+ .mdl-card__title-text a{
+   color:#FFF !important;
+   font-style: normal !important;
+ }
 
  .demo-card-square > .mdl-card__menu {
     color: #fff;
