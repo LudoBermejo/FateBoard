@@ -1,0 +1,1 @@
+angular.module('boardBodyModule', ['boilerApp.board.body.controllers', 'boilerApp.board.body.directives']);

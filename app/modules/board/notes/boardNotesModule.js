@@ -1,0 +1,1 @@
+angular.module('boardNotesModule', ['boilerApp.board.notes.controllers', 'boilerApp.board.notes.directives']);
