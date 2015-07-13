@@ -34,12 +34,19 @@ body {
   z-index: 100;
 }
 
+.form-edit-inline {
+  display: inline-flex;
+  width:100%;
+}
 .mdl-card {
   width:100% !important;
   height:100% !important;
   min-height: inherit;
 }
 
+.formEditTitle input {
+  width:70%
+}
  .mdl-card__title-text a{
    color:#FFF !important;
    font-style: normal !important;

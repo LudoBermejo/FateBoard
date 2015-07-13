@@ -7,13 +7,13 @@
     Mauris sagittis pellentesque lacus eleifend lacinia...
   </div>
    <div class="mdl-card__actions mdl-card--border">
-    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="showEditName($event)">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="showEditName($event)"  ng-hide="editingTitle">
       {{note.title}}
     </a>
-    <div class="formEditTitle hide">
+    <div class="formEditTitle" ng-show="editingTitle">
         <form action="#">
-          <div class="mdl-textfield mdl-js-textfield textfield-demo" style="display: inline-flex">
-            <input class="mdl-textfield__input" style="width:70%" 
+          <div class="mdl-textfield mdl-js-textfield textfield-demo form-edit-inline">
+            <input class="mdl-textfield__input " 
                type="text"
                id="note_{{note.id}}"
                name="note_{{note.id}}"
