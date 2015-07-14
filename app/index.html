@@ -36,6 +36,9 @@
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
 
+    <!-- styles for color picker -->
+    <link href="bower_components/ngjs-color-picker/css/ngjs-color-picker.css" rel="stylesheet"  />
+
     <!-- styles -->
     <link rel="stylesheet" href="css/main.css"/>
 
@@ -66,10 +69,16 @@
     <!-- bower components for material design -->
     <script src="/bower_components/material-design-lite/material.min.js"></script>
     
-    <!-- bower componets for marked -->
+    <!-- bower components for marked -->
     <script src="/bower_components/marked/lib/marked.js"></script>
     <script src="/bower_components/angular-marked/angular-marked.js"></script>
 
+
+    <!-- bower component for color picker -->
+    <script src="/bower_components/ngjs-color-picker/js/ngjs-color-picker.js"></script>
+    
+    <!-- bower component for local storage -->
+    <script src="/bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
 
     <!-- app -->
 
@@ -77,6 +86,8 @@
 
         <script src="modules/globals/globalsModule.js"></script>
         <script src="modules/globals/services/notesService.js"></script>
+        <script src="modules/globals/services/localStorageService.js"></script>
+        <script src="modules/globals/services/boardPositionService.js"></script>
 
     <!-- Board -->
     

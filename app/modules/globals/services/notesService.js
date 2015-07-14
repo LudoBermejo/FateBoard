@@ -1,13 +1,18 @@
-angular.module('boilerApp.globals.services', [])
-	   .factory('notesService', function() {
+
+
+angular.module('boilerApp.globals.services.notes', ['boilerApp.globals.services.localstorage'])
+
+	   .factory('notesService', function(myLocalStorageService) {
+		
+			
+
 		   
-		   var uuid = 0;
 		   var createRandomNote = function(row, col) {
-			   var colors = ["color1", "color2", "color3", "color4"];
+			   
 			   return {
-				   id: uuid++,
+				   id: arrNotes.length,
 				   title: 'Title',
-				   color: colors[Math.floor(Math.random() * (colors.length))],
+				   color: "#7bd148",
 				   sizeX: 2, 
 				   sizeY: 2, 
 				   text: 'Description',
@@ -16,24 +21,33 @@ angular.module('boilerApp.globals.services', [])
 			   }
 		   }
 		   
-		   var arrNotes = [];
+		   var arrNotes = myLocalStorageService.getNotes();
+		   
+		   if( !arrNotes ) {
+			   arrNotes = [];
+				for(var i=0;i<=4;i++) {
+					arrNotes.push(createRandomNote(0,i*2));
+				}
+				
+				myLocalStorageService.saveNotes(arrNotes);
+		   }
+		   
 		   return {
 			   addNote: function() {
 				   var item = createRandomNote(0,0);
 				   arrNotes.push(item);
+				   myLocalStorageService.saveNotes(arrNotes);
 				   return item;
 			   },
 			   removeNote: function(note) {
 				   arrNotes.splice(arrNotes.indexOf(note),1);
+				   myLocalStorageService.saveNotes(arrNotes);
 			   },
-			   getRandomNotes: function(n) {
-				   arrNotes = [];
-				   
-				   for(var i=0;i<=n-1;i++) {
-					   arrNotes.push(createRandomNote(0,i*2));
-				   }
-				   
-				   return arrNotes;
+			   updateNote: function(note) {
+				   var index = arrNotes.indexOf(note);
+				   arrNotes[index] = note;
+				   myLocalStorageService.saveNotes(arrNotes);
+				   return note;
 			   },
 			   getNotes: function() {
 				   return arrNotes;

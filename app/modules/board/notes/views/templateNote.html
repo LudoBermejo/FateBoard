@@ -1,5 +1,5 @@
 <div class="note mdl-shadow--2dp">
-  <div class="note-menu-bar {{note.color}}">
+  <div class="note-menu-bar" style="background-color: {{note.color}};">
      
      <div class="note-wrapper-title">
          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="showEditName($event)"  ng-hide="editingName">
@@ -15,9 +15,6 @@
                    ng-model="note.title" 
                    />
                    
-                <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
-                <i class="material-icons" ng-click="closeEditingName()">save</i>
-              </label>
               </div>
             </form>
          </div>
@@ -25,15 +22,24 @@
      
     <div class="note-wrapper-menu">
       <!-- Right aligned menu below button -->
-      <button  class="mdl-button mdl-js-button mdl-button--icon" ng-click="showEditText (note)" >
-        <i class="material-icons">edit</i>
-      </button>
+ 
       
-       <button class="mdl-button mdl-js-button mdl-button--icon" ng-click="removeNote(note)">
-        <i class="material-icons">delete</i>
+       <button class="mdl-button mdl-js-button mdl-button--icon" 
+         ng-click="removeNote(note)"
+          ng-hide="editingName" 
+        >
+          <i class="material-icons">delete</i>
+      </button>
+      <button class="mdl-button mdl-js-button mdl-button--icon" 
+         ng-click="closeEditingName()"
+          ng-show="editingName" 
+        >
+          <i class="material-icons">check</i>
       </button>
     </div>
+      <ngjs-color-picker class="color-picker" selected="note.color" ng-show="editingName"></ngjs-color-picker>
   </div>
+
   <div class="note-background">
     <div marked="note.text" ng-hide="editingText" class="note-text" ng-click="showEditText(note)">
     </div>
@@ -43,7 +49,7 @@
         <label class="mdl-textfield__label" for="stext_{{note.id}}"></label>
         <div class="note-save-text-menu">
           <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
-              <i class="material-icons" ng-click="closeEditingText()">save</i>
+              <i class="material-icons" ng-click="closeEditingText()">check</i>
           </label>
         </div>
       </div>
