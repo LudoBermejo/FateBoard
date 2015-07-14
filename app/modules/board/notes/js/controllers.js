@@ -1,6 +1,6 @@
 //Notes controller
 
-  angular.module('boilerApp.board.notes.controllers',[ 'boilerApp.globals.services', 'boilerApp.board.notes.directives',"xeditable" ])
+  angular.module('boilerApp.board.notes.controllers',[ 'boilerApp.globals.services', 'boilerApp.board.notes.directives',"xeditable", 'hc.marked' ])
   .controller('NotesController', [
     '$scope', 'notesService',
     function($scope, notesService) {
@@ -17,13 +17,21 @@
       }
       
       $scope.showEditName = function($event) {
-        $scope.editingTitle = true;
+        $scope.editingName = true;
         
       }
       
       $scope.closeEditingName = function($event) {
-       $scope.editingTitle = false;
-        
+       $scope.editingName = false;
       }
+      
+      $scope.showEditText = function() {
+        $scope.editingText = true;
+      }
+      
+      $scope.closeEditingText = function($event) {
+       $scope.editingText = false;
+      }
+
     }
   ]);

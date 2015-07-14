@@ -1,11 +1,74 @@
-<div class="mdl-card mdl-shadow--2dp demo-card-square">
-  <div class="mdl-card__title_{{note.color}} mdl-card--expand">
+<div class="note mdl-shadow--2dp">
+  <div class="note-menu-bar {{note.color}}">
+     
+     <div class="note-wrapper-title">
+         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="showEditName($event)"  ng-hide="editingName">
+             {{note.title}}
+         </a>
+         <div class="formEditTitle" ng-show="editingName">
+            <form action="#">
+              <div class="form-edit-inline">
+                <input class="mdl-textfield__input input_title " 
+                   type="text"
+                   id="note_{{note.id}}"
+                   name="note_{{note.id}}"
+                   ng-model="note.title" 
+                   />
+                   
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
+                <i class="material-icons" ng-click="closeEditingName()">save</i>
+              </label>
+              </div>
+            </form>
+         </div>
+     </div>
+     
+    <div class="note-wrapper-menu">
+      <!-- Right aligned menu below button -->
+      <button  class="mdl-button mdl-js-button mdl-button--icon" ng-click="showEditText (note)" >
+        <i class="material-icons">edit</i>
+      </button>
+      
+       <button class="mdl-button mdl-js-button mdl-button--icon" ng-click="removeNote(note)">
+        <i class="material-icons">delete</i>
+      </button>
+    </div>
+  </div>
+  <div class="note-background">
+    <div marked="note.text" ng-hide="editingText" class="note-text" ng-click="showEditText(note)">
+    </div>
+    <form action="#" ng-show="editingText" class="note-editing-text">
+      <div class="mdl-textfield mdl-js-textfield note-text-field">
+        <textarea class="mdl-textfield__input" type="text" name="text_{{note.id}}" ng-model="note.text"></textarea>
+        <label class="mdl-textfield__label" for="stext_{{note.id}}"></label>
+        <div class="note-save-text-menu">
+          <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
+              <i class="material-icons" ng-click="closeEditingText()">save</i>
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+  
+
+<!--<div class="mdl-card mdl-shadow--2dp demo-card-square">
+  
+  <div class="mdl-card__title_{{note.color}}  mdl-card--expand">
+   <marked>   
+         ##Markdown directive   
+         *It works!*  
+    </marked>
   </div>
 
-  <div class="mdl-card__supporting-text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Mauris sagittis pellentesque lacus eleifend lacinia...
-  </div>
+
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+    for="demo-menu-lower-right">
+  <li class="mdl-menu__item">Some Action</li>
+  <li class="mdl-menu__item">Another Action</li>
+  <li disabled class="mdl-menu__item">Disabled Action</li>
+  <li class="mdl-menu__item">Yet Another Action</li>
+</ul>
    <div class="mdl-card__actions mdl-card--border">
     <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="showEditName($event)"  ng-hide="editingTitle">
       {{note.title}}
@@ -37,3 +100,7 @@
   </div>
 </div>
 
+-->
+
+
+</div>

@@ -28,8 +28,7 @@ body {
 .hide {
   display:none;
 }
-.formEditTitle {
-}
+
 .gridster-item-resizable-handler {
   z-index: 100;
 }
@@ -44,37 +43,126 @@ body {
   min-height: inherit;
 }
 
+
+  .note {
+    position: relative;
+    width: 100%;
+    height:100%;
+  }
+  .note-background {
+    background: white;
+    height: calc(100% - 75px);
+    width: 100%; 
+  }
+  .note-menu-bar {
+    box-sizing: border-box;
+    position: relative;
+    
+    color: white;
+    height: 64px;
+    width: 100%;
+    padding: 16px;
+    padding-bottom: 0px;
+  }
+  
+  .input_title {
+    font-family: 'Roboto','Helvetica','Arial',sans-serif ;
+    font-size: 14px;
+    padding-right: 8px !important;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-left:22px !important;
+    padding-top: 8px !important;
+  }
+  
+   
+  .input_text {
+    padding-right: 0px !important;
+    margin-left: 0px !important;
+    padding-top: 0px !important;
+  }
+  
+  
+  .mdl-button.mdl-button--colored {
+    color: white;
+  }
+  .color1 {
+    background: #46B6AC;
+  }
+  
+  .color2 {
+     background: #4600CC;
+  }
+  
+  
+  .color3 {
+      background: #46B6AC;
+  }
+  
+  
+  .color4 {
+      background: #46b600;
+  }
+  
+  
+  .color5 {
+      background: #555555;
+  }
+  
+  
+  .note-wrapper-title {
+    box-sizing: border-box;
+    position: absolute;
+    left: 5px;
+  }
+  .note-wrapper-menu {
+    box-sizing: border-box;
+    position: absolute;
+    right: 16px;
+  }
+  .note-save-text-menu {
+    position: absolute;
+    right: 36px;
+    bottom: 0px;
+  }
+
 .formEditTitle input {
   width:70%
 }
- .mdl-card__title-text a{
-   color:#FFF !important;
-   font-style: normal !important;
- }
 
- .demo-card-square > .mdl-card__menu {
-    color: #fff;
-  }
-
- .demo-card-square > .mdl-card__title_color1 {
-  color: #fff;
-  background:
-    url('../assets/demos/dog.png') bottom right 15% no-repeat  #46B6AC;
- }
-.demo-card-square > .mdl-card__title_color2 {
-  color: #fff;
-  background:
-    url('../assets/demos/dog.png') bottom right 15% no-repeat #4600CC;
+.note-text {
+  margin-top:5px;
+  margin-bottom:5px;
+  margin-left:5px;
+  margin-right:5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  cursor: pointer;
 }
 
-.demo-card-square > .mdl-card__title_color3 {
-  color: #fff;
-  background:
-    url('../assets/demos/dog.png') bottom right 15% no-repeat #46b600;
+.note-text h1 {
+  
+  
+}
+.note-text-field {
+  margin-left:5px;
+  margin-right:5px;
+  width: calc(100% - 10px);
+  margin-top:5px;
+  height: 100%;
+  padding-top:0px !important;
+  
 }
 
-.demo-card-square > .mdl-card__title_color4 {
-  color: #fff;
-  background:
-    url('../assets/demos/dog.png') bottom right 15% no-repeat #555555;
+.note-editing-text {
+  height:100%;
+}
+
+.mdl-textfield__input {
+  width:100%;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  height:100%;
+  margin-left:1px;
+    
 }

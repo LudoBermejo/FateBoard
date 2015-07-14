@@ -10,6 +10,7 @@ angular.module('boilerApp.globals.services', [])
 				   color: colors[Math.floor(Math.random() * (colors.length))],
 				   sizeX: 2, 
 				   sizeY: 2, 
+				   text: 'Description',
 				   row: row || 0, 
 				   col: col || 0   
 			   }
