@@ -29,23 +29,31 @@
           $scope.$emit("moveNote", item, $scope.note )
       })      
       
-
-      
-      
       $scope.showEditName = function($event) {
         mustSave = false;
         $scope.editingName = true;
+        return $scope.editingName;
       }
       
       $scope.$watchCollection("note",function(newValue,oldValue) {
         mustSave = true;
       });
       
-      $scope.closeEditingName = function($event) {
-       $scope.editingName = false;
-       if(mustSave) {
-         notesService.updateNote($scope.note);
+      $scope.closeEditingName = function() {
+        
+       if($scope.note) {
+         var result = true;
+         if(mustSave) {
+           result = notesService.updateNote($scope.note);
+         }
+         
+       } else {
+         result = true;
        }
+       
+       $scope.editingName = !result;
+       
+       return result;
       }
       
       $scope.showEditText = function() {

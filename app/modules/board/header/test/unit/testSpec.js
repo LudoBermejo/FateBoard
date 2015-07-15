@@ -1,4 +1,4 @@
-describe('Board Header test', function() {
+describe('Board Header test: ', function() {
 
 	beforeEach(module('boilerApp'));
 	

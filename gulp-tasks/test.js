@@ -3,11 +3,15 @@
  * Run test once and exit
  */
 
+
  module.exports = function(gulp, plugins) {
  	return function() {
- 		plugins.karma.server.start({
-    		configFile: __dirname + '/../karma.conf.js',
-    		singleRun: true
-  		}, null);
+		 var path = __dirname + '/../karma.conf.js';
+		 console.log(path);
+		 var config = plugins.karmaParseConfig(path, {singleRun: true});
+		 var server = new plugins.karma.Server(config, null); 
+		 server.start();
  	}
  }
+
+

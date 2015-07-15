@@ -1,4 +1,4 @@
-describe('Board Body test', function() {
+describe('Board Body test: ', function() {
 
 	beforeEach(module('boilerApp'));
 
@@ -15,7 +15,7 @@ describe('Board Body test', function() {
 	
 	
 	it('Notes must exist', function () {
-		expect(scope.notes).toBeDefined()
+		expect(scope.notes).toBeDefined();
 	});
 
 });

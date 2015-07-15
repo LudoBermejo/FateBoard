@@ -16,9 +16,15 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'app/bower_components/angular/angular.js',
-      'app/bower_components/angular-gridster/dist/angular-gridster.min.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
       'app/bower_components/angular-route/angular-route.js',
+      'app/bower_components/angular-local-storage/dist/angular-local-storage.js',
+      'app/bower_components/angular-gridster/src/angular-gridster.js',
+      'app/bower_components/angular-xeditable/dist/js/xeditable.js',
+      'app/bower_components/angular-marked/angular-marked.js',
+      'app/bower_components/marked/lib/marked.js',
+      'app/bower_components/ngjs-color-picker/js/ngjs-color-picker.js',
+
       'app/js/*.js',
       'app/modules/*.js',
       'app/modules/**/*.js',
@@ -33,13 +39,21 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'app/js/*.js': ['coverage'],
+      'app/modules/*.js': ['coverage'],
+      'app/modules/**/*.js': ['coverage']
     },
 
+    // optionally, configure the reporter
+    coverageReporter: {
+      type : 'html',
+      dir : 'coverage/'
+    },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress','coverage'],
 
 
     // web server port

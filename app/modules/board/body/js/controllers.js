@@ -36,7 +36,7 @@
       $scope.notes = notes;
       
       $scope.$on('resizeNote', function(event,gridster) {
-//        console.log("MOVE");
+        //console.log("MOVE");
       })
 
       $scope.$on('removeNote', function(event, note) {

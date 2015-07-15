@@ -9,6 +9,10 @@ var plugins = require('gulp-load-plugins')({
 });
 
 
+/** TODO: Find a way to include karma config */
+var karmaParseConfig = require('karma/lib/config').parseConfig;
+plugins.karmaParseConfig = karmaParseConfig;
+
 
 gulp.task('lint', require('./gulp-tasks/lint')(gulp, plugins));
 gulp.task('clean', require('./gulp-tasks/clean')(gulp, plugins));

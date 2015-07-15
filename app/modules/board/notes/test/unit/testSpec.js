@@ -1,4 +1,4 @@
-describe('Board Body test', function() {
+describe('Notes tests', function() {
 
 	beforeEach(module('boilerApp'));
 
@@ -18,5 +18,9 @@ describe('Board Body test', function() {
 
 	it('Remove note must be true if not note is sended', function () {
 		expect(scope.removeNote('a')).toBeTruthy();
+	});
+	
+	it('editingName must be true if showEditName is called ', function() {
+		expect(scope.showEditName()).toBeTruthy();
 	});
 });
